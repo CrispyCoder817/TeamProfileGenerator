@@ -88,7 +88,7 @@ function beginHtml() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Team Profile</title>
+        <title>My Team</title>
     </head>
     <body>
         <nav class="navbar navbar-light bg-light mb-5">
@@ -104,15 +104,15 @@ function beginHtml() {
     console.log("start");
 }
 
-function addHtml(personnel) {
+function addHtml(neophyte) {
     return new Promise(function(resolve, reject) {
-        const name = personnel.getName();
-        const role = personnel.getRole();
-        const id = personnel.getId();
-        const email = personnel.getEmail();
+        const name = neophyte.getName();
+        const role = neophyte.getRole();
+        const id = neophyte.getId();
+        const email = neophyte.getEmail();
         let data = "";
         if (role === "Engineer") {
-            const gitHub = personnel.getGithub();
+            const gitHub = neophyte.getGithub();
             data = `<div class="col-3">
             <div class="card mx-auto mb-3" style="width: 12rem">
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
@@ -124,7 +124,7 @@ function addHtml(personnel) {
             </div>
         </div>`;
         } else if (role === "Intern") {
-            const school = personnel.getSchool();
+            const school = neophyte.getSchool();
             data = `<div class="col-3">
             <div class="card mx-auto mb-3" style="width: 12rem">
             <h5 class="card-header">${name}<br /><br />Intern</h5>
@@ -136,7 +136,7 @@ function addHtml(personnel) {
             </div>
         </div>`;
         } else {
-            const officePhone = personnel.getOfficeNumber();
+            const officePhone = neophyte.getOfficeNumber();
             data = `<div class="col-3">
             <div class="card mx-auto mb-3" style="width: 12rem">
             <h5 class="card-header">${name}<br /><br />Manager</h5>
